@@ -20,7 +20,7 @@ The GitHub actions pipeline automatically builds Docker images for ARM and x86 d
 Docker-Compose:
 ```
   tasmota:
-    image: edwardtls1/hue_exporter:latest
+    image: edwardtls1/refoss_exporter:latest
     container_name: refoss-power
     restart: always
     ports:
