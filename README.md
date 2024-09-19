@@ -17,20 +17,20 @@ The GitHub actions pipeline automatically builds Docker images for ARM and x86 d
 Docker-Compose:
 ```
   tasmota:
-    image: ghcr.io/astr0n8t/tasmota-power-exporter:latest
-    container_name: tasmota-power
+    image: edwardtls1/hue_exporter:latest
+    container_name: refoss-power
     restart: always
     ports:
     - 8000:8000
     environment:
-    - DEVICE_IP=<Tasmota IP>
+    - DEVICE_IP=<refoss IP>
     - USER=<user>
     - PASSWORD=<password>
 ```
 
 Prometheus Config:
 ```
-- job_name: "tasmota"
+- job_name: "refoss"
 
     # metrics_path defaults to '/metrics'
     # scheme defaults to 'http'.
@@ -46,11 +46,12 @@ Perform the following:
 ```
 git clone https://github.com/astr0n8t/tasmota-power-exporter.git
 cd tasmota-power-exporter
-pip install -r requirements.txt
+docker build -t edwardtls1/hue_exporter:latest -f Dockerfile .
+
 ```
 
 All of the exporter code is found in [metrics.py](./metrics.py).
 
 ## Contributors
-
 - [Nathan Higley](https://github.com/astr0n8t)
+- [EdwardTLS](https://github.com/edwardtls)
