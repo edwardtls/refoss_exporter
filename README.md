@@ -19,7 +19,7 @@ The GitHub actions pipeline automatically builds Docker images for ARM and x86 d
 
 Docker-Compose:
 ```
-  tasmota:
+  refoss:
     image: edwardtls1/refoss_exporter:latest
     container_name: refoss-power
     restart: always
@@ -33,13 +33,11 @@ Docker-Compose:
 
 Prometheus Config:
 ```
-- job_name: "refoss"
-
-    # metrics_path defaults to '/metrics'
-    # scheme defaults to 'http'.
-
-    static_configs:
-        - targets: ["127.0.0.1:8000"]
+ - job_name: refoss
+      static_configs:
+      - targets: [ '10.108.210.35:8000' ]
+        labels:
+          instance: 'fridge'
 ```
 
 ## Development
@@ -49,8 +47,8 @@ Perform the following:
 ```
 git clone https://github.com/edwardtls/refoss_exporter.git
 cd refoss_exporter
-docker build -t edwardtls1/hue_exporter:latest -f Dockerfile .
-docker push edwardtls1/hue_exporter
+docker build -t edwardtls1/refoss_exporter:latest -f Dockerfile .
+docker push edwardtls1/refoss_exporter
 ```
 
 All of the exporter code is found in [metrics.py](./metrics.py).
