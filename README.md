@@ -1,8 +1,10 @@
 # Refoss-P11 Power Exporter
 (this is a fork from: https://github.com/astr0n8t/tasmota-power-exporter)
 
-A custom exporter for Prometheus for the Tasmota open source smart plug firmware.
+A custom exporter for Prometheus based on the Tasmota open source smart plug firmware.
 Allows you to collect metrics directly from individual smart plugs without the use of HomeAssistant or something similar.
+I purchased a pair from Amazon assuming it was the "original" tasmota however, this Refoss-p11 showed up which also has a temperature sensor.
+this requires some modifications to the "metrics.py" file to make is work with the original code.
 
 ## Grafana Dashboard
 
