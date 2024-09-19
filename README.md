@@ -11,7 +11,7 @@ this requires some modifications to the "metrics.py" file to make is work with t
 Available in [grafana.json](./grafana.json)
 
 ![grafana](./grafana.png)
-![Refoss-P11](./grafana.png)
+![Refoss-P11](./refoss-p11.jpeg)
 
 ## Deployment
 
