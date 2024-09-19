@@ -44,10 +44,10 @@ Prometheus Config:
 Perform the following:
 
 ```
-git clone https://github.com/astr0n8t/tasmota-power-exporter.git
-cd tasmota-power-exporter
+git clone https://github.com/edwardtls/refoss_exporter.git
+cd refoss_exporter
 docker build -t edwardtls1/hue_exporter:latest -f Dockerfile .
-
+docker push edwardtls1/hue_exporter
 ```
 
 All of the exporter code is found in [metrics.py](./metrics.py).
